@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-     <link href="css/css.css" rel="stylesheet">
     <title>Main</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="css/css.css" rel="stylesheet">
+    <script type="text/javascript" src="jslib/jquery-1.11.1.js"></script>
+    <script type="text/javascript">
+
+
+    </script>
 </head>
 <body>
     <div class="container">
         <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-            <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+            <a href="Main.html" class="d-flex align-items-center text-dark text-decoration-none">
                 <span class="fs-4">IVE Airline</span>
             </a>
           <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
@@ -23,8 +28,8 @@
           </ul>
     
           <div class="col-md-3 text-end">
-            <button type="button" class="btn btn-outline-primary me-2">Login</button>
-            <button type="button" class="btn btn-primary">Sign-up</button>
+            <input type="button" class="btn btn-outline-primary me-2" value="Login" onclick="window.location='Login.html'">
+            <input type="button" class="btn btn-primary" value="Sign-up" onclick="window.location='Register.html'">
           </div>
 
         </header>
@@ -39,6 +44,15 @@
 
 
       </div>
+
+      <div class="container">
+        <footer>
+          <div class="card-footer text-white text-center bg-dark py-3">
+            <p>2022 IVE Airline.</p>
+            <p> ALL rights reserved.</p>
+        </footer>
+      </div>
+
 
 
 </body>

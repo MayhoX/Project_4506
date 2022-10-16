@@ -10,9 +10,27 @@
     <script type="text/javascript" src="jslib/jquery-1.11.1.js"></script>
 
     <script type="text/javascript">
+      
+
+
+    </script>
+
+    <script>
+      function login(){
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+        if (email == "admin@email.com" && password == "admin"){
+          window.location.href = "Main.Admin.html", true;
+          alert("");
+        }else{
+
+        }
 
 
 
+
+      }
     </script>
 
     
@@ -39,7 +57,25 @@
         </header>
       </div>
 
-
+      <div class="text-center container my-4">
+        <form>
+          <h1 class="h3 fw-normal pb-3">Login</h1>
+          <div class="form-floating pb-3">
+            <input class="form-control" type="email" id="email" required>
+            <label for="floatingInput">Email address</label>
+          </div>
+          <div class="form-floating pb-3">
+            <input class="form-control" type="password" id="password" required>
+            <label for="floatingInput">Password</label>
+          </div>
+          <button class="btn btn-primary btn-lg w-100 mb-3 " id="login" onclick="login()">Login</button>
+          <div class="border-top pt-3">
+            <button class="btn btn-secondary" onclick="location.href='ForgotPassword.html'">Forgot Password</button>
+            <button class="btn btn-secondary" onclick="location.href='Register.html'">Sign Up</button>
+          </div>
+            
+        </form>
+      </div>
 
 
 

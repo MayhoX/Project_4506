@@ -21,10 +21,16 @@
         var password = document.getElementById("password").value;
 
         if (email == "admin@email.com" && password == "admin"){
-          window.location.href = "Main.Admin.html", true;
+          window.location.href = "Main_Admin.html", true;
           alert("");
-        }else{
-          alert();
+         
+        }else if(email == "operator@email.com" && password == "operator"){
+          window.location.href = "Main_Operator.html", true;
+          alert("");
+          
+        }else if (email == "user@email.com" && password == "user"){
+          window.location.href = "Main_Normal_User.html", true;
+          alert("");
         }
 
 

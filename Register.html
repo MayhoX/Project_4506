@@ -6,16 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
     <link href="css/css.css" rel="stylesheet">
     <script type="text/javascript" src="jslib/jquery-1.11.1.js"></script>
 
     <script type="text/javascript">
-      
+      $(document).ready(function(){
+        $("#password").keyup(function(){
+          check();
+        });
+
+        $("#cps").keyup(function(){
+          check();
+        });
+
+      });
 
 
     </script>
 
     <script>
+    function check(){
+      var text = document.getElementById("password").value;
+      var cps = document.getElementById("cps").value;
+      var lc = document.getElementById("lc");
+      var uc = document.getElementById("uc");
+      var num = document.getElementById("num");
+      var sc = document.getElementById("sc");
+      var char = document.getElementById("char");
+      var s = document.getElementById("same");
+
+
+      checkIfEightChar(text) ? char.classList.add('list-group-item-success') : char.classList.remove('list-group-item-success');
+      checkIfOneLowercase(text) ? lc.classList.add('list-group-item-success') : lc.classList.remove('list-group-item-success');
+      checkIfOneUppercase(text) ? uc.classList.add('list-group-item-success') : uc.classList.remove('list-group-item-success');
+      checkIfOneDigit(text) ? num.classList.add('list-group-item-success') : num.classList.remove('list-group-item-success');
+      checkIfOneSpecialChar(text) ? sc.classList.add('list-group-item-success') : sc.classList.remove('list-group-item-success');
+      checkPasswordSame(text,cps) ? s.classList.add('list-group-item-success') : s.classList.remove('list-group-item-success');
+
+
+
+    }
+   
+    function checkIfEightChar(text){
+        return text.length >= 8;
+    }
+
+
+    function checkIfOneLowercase(text) {
+        return /[a-z]/.test(text);
+    }
+
+    function checkIfOneUppercase(text) {
+        return /[A-Z]/.test(text);
+    }
+
+    function checkIfOneDigit(text) {
+        return /[0-9]/.test(text);
+    }
+
+    function checkIfOneSpecialChar(text) {
+        return /[~`!@#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/g.test(text);
+    }
+
+    function checkPasswordSame(text,cps){
+        return text == cps;
+    }
+
+
 
 
       
@@ -61,20 +120,72 @@
             <label for="floatingInput">Password</label>
           </div>
           
-          <div class="form-floating pb-3">
-            <input class="form-control" type="password" id="password" placeholder="Confirm Password" required>
+          <div class="form-floating pb-3 input-group">
+            <input class="form-control" type="password" id="cps" placeholder="Confirm Password" required>
             <label for="floatingInput">Confirm Password</label>
           </div>
+ 
+ 
+          <ul class="strength-list">
+            
+            <li>
+                <span class="list-group numcharacter" id="char">
+                    <i class="fa fa-circle"></i>
+                    <span>8 Characters</span>
+                </span>
+            </li>
 
 
+            <li>
+                <span class="lowercase list-group " id="lc">
+                    <i class="fa fa-circle"></i>
+                    <span>Lowercase Letter</span>
+                </span>
+            </li>
+
+            <li>
+              <span class="uppercase list-group" id="uc">
+                  <i class="fa fa-circle"></i>
+                  <span>Uppercase Letter</span>
+              </span>
+          </li>
+            
+            <li>
+                <span class="list-group numbercase" id="num">
+                    <i class="fa fa-circle"></i>
+                    <span>Number (0-9)</span>
+                </span>
+            </li>
+            
+            <li>
+                <span class="list-group specialcase" id="sc">
+                    <i class="fa fa-circle"></i>
+                    <span>Special Characters(!#@$%*)</span>
+                </span>
+            </li>
+            
+
+            <li>
+              <span class="list-group numcharacter" id="same">
+                <i class="fa fa-circle"></i>
+                <span>Password Same</span>
+            </span>
+            </li>
+            
+        </ul>
 
 
-          <input class="btn btn-primary btn-lg w-100 mb-3 " value="Sign-up">
+          <input type="submit" class="btn btn-primary btn-lg w-100 mb-3" value="Sign-up">
             
         </form>
+
+        
+
+
+
       </div>
 
-
+      
 
 
 

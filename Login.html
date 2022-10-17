@@ -24,7 +24,7 @@
           window.location.href = "Main.Admin.html", true;
           alert("");
         }else{
-
+          alert();
         }
 
 
@@ -57,15 +57,15 @@
         </header>
       </div>
 
-      <div class="text-center container my-4">
+      <div class="text-center container my-4 w-50">
         <form>
           <h1 class="h3 fw-normal pb-3">Login</h1>
           <div class="form-floating pb-3">
-            <input class="form-control" type="email" id="email" required>
+            <input class="form-control" type="email" id="email" placeholder="Email address" required>
             <label for="floatingInput">Email address</label>
           </div>
           <div class="form-floating pb-3">
-            <input class="form-control" type="password" id="password" required>
+            <input class="form-control" type="password" id="password" placeholder="Password" required>
             <label for="floatingInput">Password</label>
           </div>
           <button class="btn btn-primary btn-lg w-100 mb-3 " id="login" onclick="login()">Login</button>

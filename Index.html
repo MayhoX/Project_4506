@@ -12,29 +12,48 @@
     
     <script type="text/javascript">
         $(document).ready(function(){
-            $("#test").click(function(){
+            $("#ShowFlights").click(function(){
+
+                $("#Search").removeClass("d-none");
+
                 if ($("#Return").is(":checked")){
-                    $("#header").text("Return");
+                    $(".header").text("Return");
                 }else if($("#Oneway").is(":checked")){
-                    $("#header").text("Oneway");
+                    $(".header").text("Oneway");
                 }   
 
-                $("#CardFrom").text($("#FlyFrom").find(":selected").text());
-                $("#CardTo").text($("#FlyTo").find(":selected").text());
 
-                $("#CardDDay").text($("#InputDDay").val());
+
+                $(".CardFrom").text($("#FlyFrom").find(":selected").text());
+                $(".CardTo").text($("#FlyTo").find(":selected").text());
+
+                $(".CardDDay").text($("#InputDDay").val());
 
                 var Rday = new Date($("#InputDDay").val());
                 Rday.setDate(Rday.getDate() + 1);
 
-                $("#CardRDay").text($("#InputDDay").val());
-                // $("#CardRDay").text(Rday.getFullYear() + "-" + (Rday.getMonth() + 1) + "-" + Rday.getDate());
+                $(".CardRDay").text($("#InputDDay").val());
+                $(".CardRDay2").text(Rday.getFullYear() + "-" + (Rday.getMonth() + 1) + "-" + Rday.getDate());
 
 
-                $("#Cardclass").text($("#Flyclass").find(":selected").text());
+                $(".Cardclass").text($("#Flyclass").find(":selected").text());
 
 
             });
+
+
+
+            $("#Reset").click(function(){  
+                $("#Search").addClass("d-none");
+
+
+            });
+
+
+
+
+
+
         });
 
 
@@ -95,7 +114,6 @@
                       </div>
                       <div class="col-lg-6 col-md-12">
                           <div class="form-floating">
-                              <!-- <input type="text" class="form-control" placeholder="FLYING TO" id="FlyTo"> -->
                               <select class="form-select" aria-label=".form-select-lg example" id="FlyTo">
                                 <option value="" selected disabled>Flying To</option>
                                 <option value="Hong Kong">Hong Kong</option>
@@ -152,8 +170,8 @@
                           </div>
                       </div>
                       <div class="col-12 mt-4">
-                          <button class="btn btn-secondary text-uppercase" type="button">Close</button>
-                          <button class="btn btn-primary text-uppercase" type="button">SHOWN FLIGHTS <i class="bi bi-airplane-engines-fill"></i></button>
+                          <button class="btn btn-secondary text-uppercase" type="button" id="Reset">Reset</button>
+                          <button class="btn btn-primary text-uppercase" type="button" id="ShowFlights">SHOW FLIGHTS <i class="bi bi-airplane-engines-fill"></i></button>
                       </div>
                   </div>
               </div>
@@ -164,32 +182,333 @@
 
 
 
-        <div class="container">  
+        <div class="container d-none" id="Search">  
                 <tr>
                     <div class="card border-0 text-bg-light my-3">
                         <div class="card-header" >
                             <div class="col">
-                                <h3 id="header"></h3>
+                                <h3 class="header"></h3>
                             </div>
                         </div>
                         <div class="card-body">
-                            <h4 id="Cardclass"></h4>
+                            <h4 class="Cardclass"></h4>
                             <div class="d-flex flex-row justify-content-between pb-3">
                                 <div class="d-flex flex-column justify-content-between align-items-center">
-                                    <h1 class="mb-2" id="CardFrom"></h1><span id="CardDDay"></span><span>07:00 AM</span></div>
+                                    <h1 class="CardFrom" id="CardFrom"></h1><span class="CardDDay"></span><span>07:00 AM</span></div>
                                 <div class="d-flex flex-column justify-content-center">
                                     <i class="bi bi-airplane-fill w-100"></i>
                                 </div>
                                 <div class="d-flex flex-column justify-content-between align-items-center">
-                                    <h1 class="mb-2" id="CardTo"></h1><span id="CardRDay"></span><span>10:00 AM</span></div>
+                                    <h1 class="CardTo" class="CardTo"></h1><span class="CardRDay"></span><span>10:00 AM</span></div>
                             </div>
                             <div class="justify-content-between border-top py-3 text-center">
-                                <h5><b>HK$:4900</b></h5>
-                                <button type="button" class="btn btn-primary">Select <i class="bi bi-caret-right-fill"></i></button>
+                                <h5><b>HK$:3200</b></h5>
+                                <button type="button" class="btn btn-primary" id="SelectTicket">Select <i class="bi bi-caret-right-fill"></i></button>
                             </div>
                         </div>
                     </div>
                 </tr>
+
+                <tr>
+                    <div class="card border-0 text-bg-light my-3">
+                        <div class="card-header" >
+                            <div class="col">
+                                <h3 class="header"></h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="Cardclass"></h4>
+                            <div class="d-flex flex-row justify-content-between pb-3">
+                                <div class="d-flex flex-column justify-content-between align-items-center">
+                                    <h1 class="CardFrom" id="CardFrom"></h1><span class="CardDDay"></span><span>08:00 AM</span></div>
+                                <div class="d-flex flex-column justify-content-center">
+                                    <i class="bi bi-airplane-fill w-100"></i>
+                                </div>
+                                <div class="d-flex flex-column justify-content-between align-items-center">
+                                    <h1 class="CardTo" id="CardTo"></h1><span class="CardRDay"></span><span>11:00 AM</span></div>
+                            </div>
+                            <div class="justify-content-between border-top py-3 text-center">
+                                <h5><b>HK$:3600</b></h5>
+                                <button type="button" class="btn btn-primary" id="SelectTicket">Select <i class="bi bi-caret-right-fill"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </tr>
+
+
+                <tr>
+                    <div class="card border-0 text-bg-light my-3">
+                        <div class="card-header" >
+                            <div class="col">
+                                <h3 class="header"></h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="Cardclass"></h4>
+                            <div class="d-flex flex-row justify-content-between pb-3">
+                                <div class="d-flex flex-column justify-content-between align-items-center">
+                                    <h1 class="CardFrom" id="CardFrom"></h1><span class="CardDDay"></span><span>09:00 AM</span></div>
+                                <div class="d-flex flex-column justify-content-center">
+                                    <i class="bi bi-airplane-fill w-100"></i>
+                                </div>
+                                <div class="d-flex flex-column justify-content-between align-items-center">
+                                    <h1 class="CardTo" id="CardTo"></h1><span class="CardRDay"></span><span>12:00 AM</span></div>
+                            </div>
+                            <div class="justify-content-between border-top py-3 text-center">
+                                <h5><b>HK$:3900</b></h5>
+                                <button type="button" class="btn btn-primary" id="SelectTicket">Select <i class="bi bi-caret-right-fill"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </tr>
+
+
+                <tr>
+                    <div class="card border-0 text-bg-light my-3">
+                        <div class="card-header" >
+                            <div class="col">
+                                <h3 class="header"></h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="Cardclass"></h4>
+                            <div class="d-flex flex-row justify-content-between pb-3">
+                                <div class="d-flex flex-column justify-content-between align-items-center">
+                                    <h1 class="CardFrom" id="CardFrom"></h1><span class="CardDDay"></span><span>10:30 AM</span></div>
+                                <div class="d-flex flex-column justify-content-center">
+                                    <i class="bi bi-airplane-fill w-100"></i>
+                                </div>
+                                <div class="d-flex flex-column justify-content-between align-items-center">
+                                    <h1 class="CardTo" id="CardTo"></h1><span class="CardRDay"></span><span>12:30 PM</span></div>
+                            </div>
+                            <div class="justify-content-between border-top py-3 text-center">
+                                <h5><b>HK$:4000</b></h5>
+                                <button type="button" class="btn btn-primary" id="SelectTicket">Select <i class="bi bi-caret-right-fill"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </tr>
+
+
+                <tr>
+                    <div class="card border-0 text-bg-light my-3">
+                        <div class="card-header" >
+                            <div class="col">
+                                <h3 class="header"></h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="Cardclass"></h4>
+                            <div class="d-flex flex-row justify-content-between pb-3">
+                                <div class="d-flex flex-column justify-content-between align-items-center">
+                                    <h1 class="CardFrom" id="CardFrom"></h1><span class="CardDDay"></span><span>12:30 PM</span></div>
+                                <div class="d-flex flex-column justify-content-center">
+                                    <i class="bi bi-airplane-fill w-100"></i>
+                                </div>
+                                <div class="d-flex flex-column justify-content-between align-items-center">
+                                    <h1 class="CardTo" id="CardTo"></h1><span class="CardRDay"></span><span>01:00 PM</span></div>
+                            </div>
+                            <div class="justify-content-between border-top py-3 text-center">
+                                <h5><b>HK$:4200</b></h5>
+                                <button type="button" class="btn btn-primary" id="SelectTicket">Select <i class="bi bi-caret-right-fill"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </tr>
+
+
+                <tr>
+                    <div class="card border-0 text-bg-light my-3">
+                        <div class="card-header" >
+                            <div class="col">
+                                <h3 class="header"></h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="Cardclass"></h4>
+                            <div class="d-flex flex-row justify-content-between pb-3">
+                                <div class="d-flex flex-column justify-content-between align-items-center">
+                                    <h1 class="CardFrom" id="CardFrom"></h1><span class="CardDDay"></span><span>01:00 PM</span></div>
+                                <div class="d-flex flex-column justify-content-center">
+                                    <i class="bi bi-airplane-fill w-100"></i>
+                                </div>
+                                <div class="d-flex flex-column justify-content-between align-items-center">
+                                    <h1 class="CardTo" id="CardTo"></h1><span class="CardRDay"></span><span>03:00 PM</span></div>
+                            </div>
+                            <div class="justify-content-between border-top py-3 text-center">
+                                <h5><b>HK$:4400</b></h5>
+                                <button type="button" class="btn btn-primary" id="SelectTicket">Select <i class="bi bi-caret-right-fill"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </tr>
+
+
+                <tr>
+                    <div class="card border-0 text-bg-light my-3">
+                        <div class="card-header" >
+                            <div class="col">
+                                <h3 class="header"></h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="Cardclass"></h4>
+                            <div class="d-flex flex-row justify-content-between pb-3">
+                                <div class="d-flex flex-column justify-content-between align-items-center">
+                                    <h1 class="CardFrom" id="CardFrom"></h1><span class="CardDDay"></span><span>04:00 PM</span></div>
+                                <div class="d-flex flex-column justify-content-center">
+                                    <i class="bi bi-airplane-fill w-100"></i>
+                                </div>
+                                <div class="d-flex flex-column justify-content-between align-items-center">
+                                    <h1 class="CardTo" id="CardTo"></h1><span class="CardRDay"></span><span>07:00 PM</span></div>
+                            </div>
+                            <div class="justify-content-between border-top py-3 text-center">
+                                <h5><b>HK$:4600</b></h5>
+                                <button type="button" class="btn btn-primary" id="SelectTicket">Select <i class="bi bi-caret-right-fill"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </tr>
+
+
+
+                <tr>
+                    <div class="card border-0 text-bg-light my-3">
+                        <div class="card-header" >
+                            <div class="col">
+                                <h3 class="header"></h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="Cardclass"></h4>
+                            <div class="d-flex flex-row justify-content-between pb-3">
+                                <div class="d-flex flex-column justify-content-between align-items-center">
+                                    <h1 class="CardFrom" id="CardFrom"></h1><span class="CardDDay"></span><span>07:00 PM</span></div>
+                                <div class="d-flex flex-column justify-content-center">
+                                    <i class="bi bi-airplane-fill w-100"></i>
+                                </div>
+                                <div class="d-flex flex-column justify-content-between align-items-center">
+                                    <h1 class="CardTo" id="CardTo"></h1><span class="CardRDay"></span><span>11:00 PM</span></div>
+                            </div>
+                            <div class="justify-content-between border-top py-3 text-center">
+                                <h5><b>HK$:4800</b></h5>
+                                <button type="button" class="btn btn-primary" id="SelectTicket">Select <i class="bi bi-caret-right-fill"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </tr>
+
+
+                <tr>
+                    <div class="card border-0 text-bg-light my-3">
+                        <div class="card-header" >
+                            <div class="col">
+                                <h3 class="header"></h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="Cardclass"></h4>
+                            <div class="d-flex flex-row justify-content-between pb-3">
+                                <div class="d-flex flex-column justify-content-between align-items-center">
+                                    <h1 class="CardFrom" id="CardFrom"></h1><span class="CardDDay"></span><span>8:00 PM</span></div>
+                                <div class="d-flex flex-column justify-content-center">
+                                    <i class="bi bi-airplane-fill w-100"></i>
+                                </div>
+                                <div class="d-flex flex-column justify-content-between align-items-center">
+                                    <h1 class="CardTo" id="CardTo"></h1><span class="CardRDay"></span><span>10:30 PM</span></div>
+                            </div>
+                            <div class="justify-content-between border-top py-3 text-center">
+                                <h5><b>HK$:4900</b></h5>
+                                <button type="button" class="btn btn-primary" id="SelectTicket">Select <i class="bi bi-caret-right-fill"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </tr>
+
+
+
+                <tr>
+                    <div class="card border-0 text-bg-light my-3">
+                        <div class="card-header" >
+                            <div class="col">
+                                <h3 class="header"></h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="Cardclass"></h4>
+                            <div class="d-flex flex-row justify-content-between pb-3">
+                                <div class="d-flex flex-column justify-content-between align-items-center">
+                                    <h1 class="CardFrom" id="CardFrom"></h1><span class="CardDDay"></span><span>09:00 PM</span></div>
+                                <div class="d-flex flex-column justify-content-center">
+                                    <i class="bi bi-airplane-fill w-100"></i>
+                                </div>
+                                <div class="d-flex flex-column justify-content-between align-items-center">
+                                    <h1 class="CardTo" id="CardTo"></h1><span class="CardRDay"></span><span>11:00 PM</span></div>
+                            </div>
+                            <div class="justify-content-between border-top py-3 text-center">
+                                <h5><b>HK$:5000</b></h5>
+                                <button type="button" class="btn btn-primary" id="SelectTicket">Select <i class="bi bi-caret-right-fill"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </tr>
+
+
+                <tr>
+                    <div class="card border-0 text-bg-light my-3">
+                        <div class="card-header" >
+                            <div class="col">
+                                <h3 class="header"></h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="Cardclass"></h4>
+                            <div class="d-flex flex-row justify-content-between pb-3">
+                                <div class="d-flex flex-column justify-content-between align-items-center">
+                                    <h1 class="CardFrom" id="CardFrom"></h1><span class="CardDDay"></span><span>11:00 PM</span></div>
+                                <div class="d-flex flex-column justify-content-center">
+                                    <i class="bi bi-airplane-fill w-100"></i>
+                                </div>
+                                <div class="d-flex flex-column justify-content-between align-items-center">
+                                    <h1 class="CardTo" id="CardTo"></h1><span class="CardRDay2"></span><span>02:00 AM</span></div>
+                            </div>
+                            <div class="justify-content-between border-top py-3 text-center">
+                                <h5><b>HK$:5100</b></h5>
+                                <button type="button" class="btn btn-primary" id="SelectTicket">Select <i class="bi bi-caret-right-fill"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </tr>
+
+
+                <tr>
+                    <div class="card border-0 text-bg-light my-3">
+                        <div class="card-header" >
+                            <div class="col">
+                                <h3 class="header"></h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="Cardclass"></h4>
+                            <div class="d-flex flex-row justify-content-between pb-3">
+                                <div class="d-flex flex-column justify-content-between align-items-center">
+                                    <h1 class="CardFrom" id="CardFrom"></h1><span class="CardDDay"></span><span>12:00 PM</span></div>
+                                <div class="d-flex flex-column justify-content-center">
+                                    <i class="bi bi-airplane-fill w-100"></i>
+                                </div>
+                                <div class="d-flex flex-column justify-content-between align-items-center">
+                                    <h1 class="CardTo" id="CardTo"></h1><span class="CardRDay2"></span><span>03:00 AM</span></div>
+                            </div>
+                            <div class="justify-content-between border-top py-3 text-center">
+                                <h5><b>HK$:5200</b></h5>
+                                <button type="button" class="btn btn-primary" id="SelectTicket">Select <i class="bi bi-caret-right-fill"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </tr>
+
+
+
         </div>
         
 

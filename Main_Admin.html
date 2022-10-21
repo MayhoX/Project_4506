@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lonin</title>
+    <title>Main Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link href="css/css.css" rel="stylesheet">
     <script type="text/javascript" src="jslib/jquery-1.11.1.js"></script>
 
-    <script type="text/javascript">
+    <script type="text/javascript">       
 
 
 
@@ -17,10 +17,10 @@
 
     
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
     <div class="container">
-        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-            <a href=" Index.html" class="d-flex align-items-center text-dark text-decoration-none">
+        <header class="d-flex flex-wrap align-items-center  justify-content-md-between py-3 mb-4">
+            <a href="Index.html" class="d-flex align-items-center text-dark text-decoration-none">
                 <span class="fs-4">IVE Airline</span>
             </a>
           <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
@@ -32,26 +32,71 @@
           </ul>
     
           <div class="col-md-3 text-end">
-            <input type="button" class="btn btn-outline-primary me-2" value="Login" onclick="window.location='Login.html'">
-            <input type="button" class="btn btn-primary" value="Sign-up" onclick="window.location='Register.html'">
+            <input type="button" class="btn btn-outline-primary me-2" value="Logout" onclick="window.location='Index.html'">
           </div>
 
         </header>
+      </div>
+
+      
+      <div class="d-flex flex-column flex-shrink-0 p-3 bg-body" style="width: 280px;">
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a href="#" class="nav-link active" aria-current="page">
+              <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link link-dark">
+              <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link link-dark">
+              <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+              Orders
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link link-dark">
+              <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+              Products
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link link-dark">
+              <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
+              Customers
+            </a>
+          </li>
+        </ul>
+        <hr>
+        <div class="dropdown">
+          <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://github.com/mdo.png" alt="" class="rounded-circle me-2" width="32" height="32">
+            <strong>mdo</strong>
+          </a>
+          <ul class="dropdown-menu text-small shadow">
+            <li><a class="dropdown-item" href="#">New project...</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </div>
       </div>
 
 
 
 
 
-
-
-
-    <div class="container">
-        <footer>
-          <div class="card-footer text-white text-center bg-dark py-3">
-            <p>2022 IVE Airline.</p>
-            <p> ALL rights reserved.</p>
-        </footer>
-    </div>
+      <footer class="mt-auto">
+        <div class="card-footer text-white text-center bg-dark py-3">
+          <p>2022 IVE Airline.</p>
+          <p> ALL rights reserved.</p>
+      </footer>
 </body>
 </html>

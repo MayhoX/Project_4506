@@ -100,15 +100,30 @@
           <label for="exampleInputPassword1" class="form-label">Password</label>
           <input type="password" class="form-control" id="Password1">
         </div>
-        <button id="create" class="btn btn-primary bg-success" onclick="location.href='Register_Operator_create.html'">Create</button>
-        <button id="create" class="btn btn-primary bg-warning" onclick="show()">Edit</button>
+        <button type="button" value="Create" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary bg-success">Create</button>
       </form>
       </div>
       <p></p>
 
 
 
-
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
     <div class="container">
         <footer>
           <div class="card-footer text-white text-center bg-dark py-3">

@@ -14,7 +14,21 @@
         $(document).ready(function(){
             $("#ShowFlights").click(function(){
 
-                $("#Search").removeClass("d-none");
+
+                $("#load").removeClass("d-none");
+
+
+
+                
+                setTimeout(function(){
+                    $("#load").addClass("d-none");
+                    $("#Search").removeClass("d-none");
+                }, 4000);
+
+
+
+
+                // $("#Search").removeClass("d-none");
 
                 if ($("#Return").is(":checked")){
                     $(".header").text("Return");
@@ -48,11 +62,6 @@
 
 
             });
-
-
-
-
-
 
         });
 
@@ -178,6 +187,18 @@
           </div>
         </div>
         
+
+        <div class="container d-none" id="load">
+            <div class="card border-0 my-3">
+                <div class="d-flex justify-content-center">
+                    <div class="loading-box">
+                        <div class="loader"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
 
         <div class="container d-none" id="Search">  
                 <tr>

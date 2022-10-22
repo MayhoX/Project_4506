@@ -155,7 +155,16 @@
             <div class="card chart-container" style="width: 500px;">
               <canvas id="chart"></canvas>
             </div>
-            
+            <div class="h4">
+              Order and Complaint Ratio 
+            </div>
+            <div class="col-md-6 py-1" style="width: 500px;">
+              <div class="card">
+                  <div class="card-body">
+                      <canvas id="chBar"></canvas>
+                  </div>
+              </div>
+            </div>
           </div>
           <div class="container main w-100">
             <div class="row row-cols-auto">
@@ -175,9 +184,7 @@
                 <h2 class="fw-normal py-3">Award</h2>
                 <p><a class="btn btn-primary" href="#">Edit</a></p>
               </div>
-            </div>
-            <p>
-              <div class="row row-cols-auto">
+
               <div class="col-lg-4 py-3 text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="auto" height="70" fill="currentColor" class="bi bi-award-fill" viewBox="0 0 16 16">
                   <path d="m8 0 1.669.864 1.858.282.842 1.68 1.337 1.32L13.4 6l.306 1.854-1.337 1.32-.842 1.68-1.858.282L8 12l-1.669-.864-1.858-.282-.842-1.68-1.337-1.32L2.6 6l-.306-1.854 1.337-1.32.842-1.68L6.331.864 8 0z"/>
@@ -185,12 +192,12 @@
                 </svg> 
                 <h2 class="fw-normal py-3">Normal User</h2>
                 <p><a class="btn btn-primary" href="#">Edit</a></p>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
       <footer class="mt-auto">
         <div class="card-footer text-white text-center bg-dark py-3">
           <p>2022 IVE Airline.</p>
@@ -235,5 +242,33 @@
     
     
         </script>
+        <script>var chBar = document.getElementById("chBar");
+          if (chBar) {
+            new Chart(chBar, {
+            type: 'bar',
+            data: {
+              labels: ["S", "M", "T", "W", "T", "F", "S"],
+              datasets: [{
+                data: [589, 445, 483, 503, 689, 692, 634],
+                backgroundColor: colors[0]
+              },
+              {
+                data: [639, 465, 493, 478, 589, 632, 674],
+                backgroundColor: colors[1]
+              }]
+            },
+            options: {
+              legend: {
+                display: false
+              },
+              scales: {
+                xAxes: [{
+                  barPercentage: 0.4,
+                  categoryPercentage: 0.5
+                }]
+              }
+            }
+            });
+          }</script>
       </body>
       </html>

@@ -43,18 +43,69 @@
 
         </header>
       </div>
-      <div class="container w-50"><h1>Operator Management</h1></div>
-      <div class="container w-50">
+
+      
+      <div class="d-flex flex-fill pb-5">
+        <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 250px;">
+          <hr>
+          <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+              <a href="Main_Admin.html" class="nav-link" aria-current="page">
+                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+                Home
+              </a>
+            </li>
+          <li>
+            <a href="Register_Operator.html" class="nav-link active">
+              <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+              Operator
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link link-dark">
+              <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+              
+            </a>
+          </li>
+        </ul>
+        <hr>
+        <div class="dropup">
+          <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="img/humans.jpg" alt="" class="rounded-circle me-2" width="32" height="32">
+            <strong>Admin</strong>
+          </a>
+
+          <ul class="dropdown-menu text-small shadow bg-light">
+            <li><a class="dropdown-item" href="ChangePassword.html">Change Password</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+      <div class="container mx-2">
+      <div class="d-flex flex-column">
+      <div class="container w-100"><h1>Operator Management</h1></div>
+
+      <div class="container w-100">
         <form>
         <label for="exampleInputEmail1" class="form-label">Search Name</label>
         <input class="form-control w-50" id="Name">
         <p>
         </form>
         <button id="search" class="btn btn-primary" onclick="">Search</button>
+        <button type="button" id="btnCreate" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#DiaCreate">Create Operator</button>
       </div>
       <p></p>
 
-      <div class="container w-50">
+      <div class="container w-100">
         <div class="tab-content">
           <div class="tab-pane fade show active" id="table1">
             <table class="table table-striped table-hover table-bordered border-dark">
@@ -68,19 +119,19 @@
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row"><a href="" type="button" id="create" vlaue="Create" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-primary bg-success">Edit</a></th>
+                  <th scope="row"><a href="" type="button" id="create" vlaue="Create" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-success">Edit</a></th>
                   <td>Mark</td>
                   <td>operator01</td>
                   <td>@mddadssso</td>
                 </tr>
                 <tr id="2">
-                  <th scope="row"><a href="" type="button" id="create" vlaue="Create" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-primary bg-success">Edit</a></th>
+                  <th scope="row"><a href="" type="button" id="create" vlaue="Create" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-success">Edit</a></th>
                   <td>Mark</td>
                   <td>operator02</td>
                   <td>DSADSA</td>
                 </tr>
                 <tr id="3">
-                  <th scope="row"><a href="" type="button" id="create" vlaue="Create" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-primary bg-success">Edit</a></th>
+                  <th scope="row"><a href="" type="button" id="create" vlaue="Create" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-success">Edit</a></th>
                   <td></td>
                   <td></td>
                   <td></td>
@@ -100,19 +151,19 @@
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row"><a href="" type="button" id="create" vlaue="Create" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-primary bg-success">Edit</a></th>
+                  <th scope="row"><a href="" type="button" id="create" vlaue="Create" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-success">Edit</a></th>
                   <td>Mark</td>
                   <td>operator01</td>
                   <td>@mddadssso</td>
                 </tr>
                 <tr>
-                  <th scope="row" id="2"><a href="" type="button" id="create" vlaue="Create" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-primary bg-success">Edit</a></th>
+                  <th scope="row" id="2"><a href="" type="button" id="create" vlaue="Create" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-success">Edit</a></th>
                   <td>Mark</td>
                   <td>operator02</td>
                   <td>DSADSA</td>
                 </tr>
                 <tr>
-                  <th scope="row" id="3"><a href="" type="button" id="create" vlaue="Create" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-primary bg-success">Edit</a></th>
+                  <th scope="row" id="3"><a href="" type="button" id="create" vlaue="Create" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-success">Edit</a></th>
                   <td>Mark</td>
                   <td>operator03</td>
                   <td>1234441</td>
@@ -132,19 +183,19 @@
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row"><a href="" type="button" id="create" vlaue="Create" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-primary bg-success">Edit</a></th>
+                  <th scope="row"><a href="" type="button" id="create" vlaue="Create" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-success">Edit</a></th>
                   <td>Mark</td>
                   <td>operator01</td>
                   <td>@mddadssso</td>
                 </tr>
                 <tr>
-                  <th scope="row" id="2"><a href="" type="button" id="create" vlaue="Create" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-primary bg-success">Edit</a></th>
+                  <th scope="row" id="2"><a href="" type="button" id="create" vlaue="Create" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-success">Edit</a></th>
                   <td>Mark</td>
                   <td>operator02</td>
                   <td>DSADSA</td>
                 </tr>
                 <tr>
-                  <th scope="row" id="3"><a href="" type="button" id="create" vlaue="Create" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-primary bg-success">Edit</a></th>
+                  <th scope="row" id="3"><a href="" type="button" id="create" vlaue="Create" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-success">Edit</a></th>
                   <td>Mark</td>
                   <td>operator03</td>
                   <td>1234441</td>
@@ -159,22 +210,6 @@
         <button class="nav-link" data-bs-toggle="tab" data-bs-target="#table3" aria-selected="false">3</button>
       </div>
     </div>
-
-      <div class="container w-50 border-top my-3 pt-3">
-      <form>
-        <div class="mb-3 w-50">
-          <label for="Name" class="form-label">Name</label>
-          <input class="form-control" id="Name">
-        </div>
-        <div class="mb-3 w-50">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="Password1">
-        </div>
-        <a href="Register_Operator_create.html" type="button" id="create" vlaue="Create"class="btn btn-primary bg-success">Create</a>
-      </form>
-      </div>
-      <p></p>
-
 
 
       <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -198,6 +233,36 @@
           </div>
         </div>
       </div>
+
+
+
+
+      <div class="modal fade" id="DiaCreate" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Create Operator</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <label for="Name" class="form-label">Name</label>
+              <input class="form-control" id="Name" text="@mddadssso">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="Password1"></input>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-success" onclick="location.href='Register_Operator_create.html'">Save Changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    </div>
+  </div>
+
 
 
       <footer class="mt-auto">

@@ -13,8 +13,9 @@
     <script type="text/javascript" src="jslib/jquery-1.11.1.js"></script>
 
     <script type="text/javascript">       
-
-
+        $(document).ready(function(){
+        $("#dia").modal('show');
+      });   
 
     </script>
 
@@ -201,6 +202,32 @@
       </div>
     </div>
   </div>
+
+  <div class="modal fade" id="dia" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Wecome</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="h4 ">
+            If you first time login account, please change password first!!!
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="location.href='ChangePassword.html'">Change Password</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
   </div>
       <footer class="mt-auto">
         <div class="card-footer text-white text-center bg-dark py-3">
@@ -244,6 +271,8 @@
             });
           }
     
+
+          
     
         </script>
         <script>var chBar = document.getElementById("chBar");

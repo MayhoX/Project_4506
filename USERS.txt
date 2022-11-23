@@ -1,0 +1,11 @@
+Admin:
+	email: admin@email.com
+	password: admin
+
+Operator:
+	email: operator@email.com
+	password: operator
+
+User:
+	email: user@email.com
+	password: user
